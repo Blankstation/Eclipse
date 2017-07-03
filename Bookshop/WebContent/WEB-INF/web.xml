@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Bookshop</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 统计在线人数  -->
+  <listener >
+		<listener-class>com.listener.OnlineUserListener</listener-class>	
+	</listener>
+	
+	<!-- 验证用户名是否存在 -->
+	<servlet>
+  		<servlet-name>RegisterSvl</servlet-name>
+  		<servlet-class>com.action.RegisterSvl</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+	    <servlet-name>RegisterSvl</servlet-name>
+	    <url-pattern>/RegisterSvl</url-pattern>
+	</servlet-mapping>
+  <servlet>
+  	<servlet-name>imgs</servlet-name>
+  	<servlet-class>com.action.ImgSvl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>imgs</servlet-name>
+  	<url-pattern>/ImgSvl</url-pattern>
+  </servlet-mapping>
+  <!--中文乱码处理过滤-->  
+    <filter>
+        <filter-name>EncodingFilter</filter-name><!--过滤器名称，自己起 -->
+        <filter-class>com.filter.ChacterEncoding</filter-class><!--过滤器类名称，包括包名一致、写全 -->
+        <init-param><!--初始化参数,要指定的字符集编码 -->
+            <param-name>encoding</param-name><!--参数名称 -->
+            <param-value>UTF-8</param-value><!--参数值 -->
+        </init-param>
+        <init-param><!--初始化参数,指定是否忽略大小写 -->
+            <param-name>ignore</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern> <!--“/*”表示项目下所有资源 -->
+    </filter-mapping>
+  <!--中文乱码处理过滤 --> 
+  <!--struts核心配置文件 --> 
+  <filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	<session-config>
+    	<session-timeout>15</session-timeout>
+    </session-config>
+</web-app>

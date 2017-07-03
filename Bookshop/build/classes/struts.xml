@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.enable.DyamicMethodInvocation" value="true"></constant>
+	<constant name="struts.custom.i18n.resources" value="message"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.devMode" value="TRUE"></constant>
+	<package name="bookshop" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="error">error.jsp</result>
+		</global-results>
+		<action name="userAction_*" class="com.action.UserAction"
+			method="{1}">
+			<result name="mainOK">main/main.jsp</result>
+			<result name="loginGet">/main/login.jsp</result>
+			<result name="loginOk" type="chain">userAction_getAllBooks</result>
+		  <result name="registerGet">/main/Register.jsp</result>
+			<result name="registerOK">/main/login.jsp</result>
+			<result name="detailOk">/main/bookDetail.jsp</result>
+			<result name="nullUser">/main/login.jsp</result>
+			<result name="shopCarOk">/main/ShopCar.jsp</result>
+			<result name="checkOutOk">/main/checkOut.jsp</result>
+			<result name="payOk" type="redirect">/main/PayOK.jsp</result>
+		</action>
+		<action name="bookAdminAction_*" class="com.action.bookAdminAction" method="{1}">
+			<result name="addBook">/admin/BookAdd.jsp</result>
+		</action>
+		<action name="buyInfoAction_*" class="com.action.BuyInfoAction" method="{1}">
+			<result name="buyInfo">/admin/buyInfo.jsp</result>
+		</action>
+	</package>
+</struts>

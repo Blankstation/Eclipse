@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>Mess</display-name>
+	<welcome-file-list>
+		<welcome-file>FetchMessageServlet</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<description></description>
+		<display-name>loginServlet</display-name>
+		<servlet-name>loginServlet</servlet-name>
+		<servlet-class>com.servlet.loginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginServlet</servlet-name>
+		<url-pattern>/loginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>registerServlet</display-name>
+		<servlet-name>registerServlet</servlet-name>
+		<servlet-class>com.servlet.registerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>registerServlet</servlet-name>
+		<url-pattern>/registerServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>FetchMessageServlet</display-name>
+		<servlet-name>FetchMessageServlet</servlet-name>
+		<servlet-class>com.servlet.FetchMessageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FetchMessageServlet</servlet-name>
+		<url-pattern>/FetchMessageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>messageServlet</display-name>
+		<servlet-name>messageServlet</servlet-name>
+		<servlet-class>com.servlet.messageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>messageServlet</servlet-name>
+		<url-pattern>/messageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>DelMsgServlet</display-name>
+		<servlet-name>DelMsgServlet</servlet-name>
+		<servlet-class>com.servlet.DelMsgServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DelMsgServlet</servlet-name>
+		<url-pattern>/DelMsgServlet</url-pattern>
+	</servlet-mapping>
+
+</web-app>
+
+
