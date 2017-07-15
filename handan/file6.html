@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邯有你不孤郸</title>
+    <link rel="stylesheet" type="text/css" href="css/message.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all"/>
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js" ></script>
+    <script type="text/javascript" src="js/jquery.faded.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <h2><strong>邯</strong>有你不孤<strong>郸</strong></h2>
+        <nav>
+            <ul class="level">
+                <li><a href="homepage.html" >主页</a></li>
+                <li><a href="file1.html">自然风光</a></li>
+                <li><a href="#">人文气息</a></li>
+                <li><a href="#">美食鉴赏</a></li>
+                <li><a href="#">旅游景点</a></li>
+                <li><a href="#">名校简介</a></li>
+                <li><a href="file6.html">留下足迹</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!--图片-->
+    <div id="faded">
+        <div class="rap">
+            <a href="#"><img src="images/big-img1.jpg" alt="" width="571" height="398"/></a>
+            <a href="#"><img src="images/big-img2.jpg" alt="" width="571" height="398"/></a>
+            <a href="#"><img src="images/big-img3.jpg" alt="" width="571" height="398"/></a>
+
+        </div>
+        <ul class="pagination">
+            <li>
+                <a href="#" rel="0">
+                    <img src="images/f-thumb1.jpg" alt="">
+                    <span class="left">
+                    锦绣河山<br/>
+                     层峦耸翠<br/>
+                </span>
+                    <span class=right">
+                    青山绿水<br/>
+                    水天一色 <br/>
+                </span>
+                </a>
+            </li>
+            <li>
+                <a href="#" rel="1">
+                    <img src="images/f-thumb2.jpg" alt="">
+                    <span class="left">
+                    七步沟<br/>
+                    AAAA级<br/>
+                </span>
+                    <span class=right">
+                    古朴独特<br/>
+                    气势恢宏 <br/>
+                </span>
+                </a>
+            </li>
+            <li>
+                <a href="#" rel="2">
+                    <img src="images/f-thumb3.jpg" alt="">
+                    <span class="left">
+                    蜗皇宫<br/>
+                     国内最早<br/>
+                    规模最大<br/>
+                </span>
+                    <span class=right">
+                    南北朝北齐<br/>
+                    祭祀女娲<br/>
+                    古建筑群<br/>
+                </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+<section id="Mess">
+    <article>
+        <h2>图片</h2>
+        <img src="images/message.gif" alt="" width="600"/>
+        <h2>放松一下</h2>
+       <audio src="music/star.mp3" controls="controls" autoplay="autoplay"></audio>
+    </article>
+</section>
+<aside class="message">
+    <div class="prefix">
+        <article>
+            <div class="box">
+                <h2>寄语</h2>
+                <p>斯人若彩虹，遇上方知有！</p>
+            </div>
+        </article>
+        <article class="mess-last">
+            <h2>留下足迹</h2>
+            <form action="" id="contacts-form">
+                <h3><label><span class="user">姓名：</span><input type="text" /></label></h3>
+                <h3><label><span>E-mail：</span><input type="text" /></label></h3>
+                <h3><div class="wrapper"><span>留言：
+                </span><textarea cols="35" rows="15"></textarea></div></h3>
+                <div class="wrapper">
+                    <a href="#" onClick="document.getElementById('contacts-form').submit()" class="button">提交</a>
+                    <a href="#" onClick="document.getElementById('contacts-form').submit()" class="button">重置</a>
+                </div>
+            </form>
+        </article>
+    </div>
+</aside>
+<footer>
+    <div class="container">
+        <div id="main">
+            &copy GuYan
+        </div>
+    </div>
+</footer>
+<script type="text/javascript">
+    $(function () {
+        $(".accordion dt").toggle(function () {
+            $(this).next().slideDown();
+        },function () {
+            $(this).next().slideUp();
+        });
+        $(".level a").each(function () {
+            $this = $(this);
+            if ($this[0].href == String(window.location)) {
+                $this.addClass("current");
+            }
+        });
+    });
+    </script>
+</body>

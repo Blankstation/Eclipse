@@ -1,0 +1,36 @@
+#Mess{
+    padding:20px 0 35px 0;
+    position: absolute;
+    top: 630px;
+    left: 100px;
+}
+aside.message{
+    margin-top:10px;
+}
+aside.message .box{
+    width: 300px;
+    height: 150px;
+    background: #c3c3c3;
+    border: 1px solid #c3c3c3;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 10px ;
+}
+aside.message .box p{
+    font-size: 25px;
+}
+aside.message .mess-last{
+    margin-top: 200px;
+    width: 300px;
+    height: 450px;
+    background: #c3c3c3;
+    border: 1px solid #c3c3c3;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 10px ;
+}
+#contacts-form span.user{
+    margin-right: 15px;
+}
