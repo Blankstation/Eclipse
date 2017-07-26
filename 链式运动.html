@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>链式运动</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul{
+            width: 400px;
+            height: 600px;
+            border: 1px solid black;
+            margin: 10px auto;
+            list-style: none;
+            overflow: hidden;
+        }
+        li{
+            border-bottom:1px black dashed;
+            padding: 4px;
+            overflow: hidden;
+            opacity: 0;
+            filter: alpha(opacity:0);
+        }
+        </style>
+    <script src="Move.js"></script>
+    <script type="text/javascript">
+        window.onload=function () {
+            var oTxt=document.getElementById('text');
+            var oBtn=document.getElementById('btn');
+            var oUl=document.getElementById('ull');
+            btn.onclick=function () {
+                var oLi=document.createElement('li');
+                oLi.innerHTML=oTxt.value;
+                oTxt.value='';
+                if(oUl.children){
+                    oUl.insertBefore(oLi,oUl.children[0]);
+                }else{
+                    oUl.appendChild(oLi);
+                }
+                var iHeight=oLi.offsetHeight;
+                oLi.style.height='0px';
+                    startMove(oLi,{height:iHeight},function () {
+                        startMove(oLi,{opacity:100});
+                    });
+            }
+        }
+        </script>
+</head>
+<body>
+<textarea id="text" cols="20"></textarea><br/>
+<button id="btn">发布</button>
+<ul id="ull">
+</ul>
+</body>
+</html>

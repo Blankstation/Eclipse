@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器1</title>
+    <script>
+        function toDuo(n) {
+            if(n<10){
+                return '0'+n;
+            }else {
+                return ''+n;
+            }
+        }
+        window.onload=function () {
+            var oimg=document.getElementsByTagName('img');
+            function tick() {
+                var oDate=new Date();
+                var str=toDuo(oDate.getHours())+toDuo(oDate.getMinutes())+toDuo(oDate.getSeconds());
+                for(var i=0;i<oimg.length;i++){
+                    oimg[i].src='dingshiqi1-images/'+str.charAt(i)+'.png';
+                }
+            }
+            setInterval(tick,1000);
+            tick();
+        }
+        </script>
+</head>
+<body style="background: black;color: white;font-size: 50px">
+<img src="dingshiqi1-images/0.png"/>
+<img src="dingshiqi1-images/0.png"/>
+:
+<img src="dingshiqi1-images/0.png"/>
+<img src="dingshiqi1-images/0.png"/>
+:
+<img src="dingshiqi1-images/0.png"/>
+<img src="dingshiqi1-images/0.png"/>
+</body>
+</html>
